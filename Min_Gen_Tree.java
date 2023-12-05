@@ -91,7 +91,12 @@ class KruskalAlgorithm {
     private static int find(int[] parent, int i) {
         if (parent[i] == i)
             return i;
-        return find(parent, parent[i]);
+        else {
+            int F = find(parent,i);
+            parent[i] = F;
+            return F;
+
+        }
     }
 
     private static void union(int[] parent, int x, int y) {
